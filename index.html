@@ -1,0 +1,676 @@
+<!doctype html>
+<html lang="fa-AF" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>اورلیا جواهر - زیورآلات لوکس و نفیس</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a
+          href="index.html"
+          class="brand"
+          style="text-decoration: none; color: inherit"
+          >Aurelia</a
+        >
+        <nav class="nav">
+          <a href="#collections">کالکشن ها</a>
+          <a href="#new">تازه ها</a>
+          <a href="#bestsellers">پرفروش ها</a>
+          <a href="category.html">دسته بندی ها</a>
+          <a href="about.html">درباره ما</a>
+          <a href="contact.html">تماس</a>
+        </nav>
+        <div class="actions">
+          <button class="icon-btn menu-btn" aria-label="منو" id="btnMenu">
+            <span class="icon"
+              ><svg
+                viewBox="0 0 24 24"
+                width="22"
+                height="22"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" /></svg
+            ></span>
+          </button>
+          <button class="icon-btn" aria-label="جستجو" id="btnSearch">
+            <span class="icon"
+              ><svg
+                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z"
+                /></svg
+            ></span>
+          </button>
+          <button class="icon-btn" aria-label="علاقه مندی ها" id="btnWishlist">
+            <span class="icon"
+              ><svg
+                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 6 4 4 6.5 4c1.74 0 3.41.81 4.5 2.09C12.59 4.81 14.26 4 16 4 18.5 4 20.5 6 20.5 8.5c0 3.78-3.4 6.86-8.05 11.54L12 21.35z"
+                /></svg
+            ></span>
+          </button>
+          <button class="icon-btn" aria-label="حساب کاربری" id="btnAccount">
+            <span class="icon"
+              ><svg
+                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 12c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm0 2c-3.33 0-10 1.67-10 5v3h20v-3c0-3.33-6.67-5-10-5z"
+                /></svg
+            ></span>
+          </button>
+          <button class="icon-btn cart-btn" aria-label="سبد خرید" id="btnCart">
+            <span class="icon"
+              ><svg
+                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2S15.9 22 17 22s2-.9 2-2-.9-2-2-2zM7.1 14h9.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0 0 21 5H6.21l-.94-2H2v2h2l3.6 7.59-1.35 2.44C5.52 15.37 6.2 16 7.1 16H19v-2H7.1z"
+                /></svg
+            ></span>
+            <span class="badge" id="cartCount">0</span>
+          </button>
+        </div>
+      </div>
+      <div class="container mobile-nav">
+        <a href="index.html#collections">کالکشن ها</a>
+        <a href="index.html#new">جدید</a>
+        <a href="index.html#bestsellers">ترند</a>
+        <a href="category.html">دسته بندی ها</a>
+        <a href="about.html">درباره ما</a>
+        <a href="contact.html">تماس</a>
+      </div>
+    </header>
+
+    <section class="hero" id="hero">
+      <div class="hero-media">
+        <picture>
+          <source
+            media="(min-width: 1100px)"
+            srcset="
+              https://images.unsplash.com/photo-1518370265276-f22b706aeac8?ixid=M3w4MjcwNjd8MHwxfHNlYXJjaHw5fHxqZXdlbGxlcnl8ZW58MHx8fHwxNzY0NDM0NTUwfDA&ixlib=rb-4.1.0&w=1500&h=600&fit=max&q=80
+            "
+          />
+          <source
+            media="(min-width: 720px)"
+            srcset="
+              https://images.unsplash.com/photo-1518370265276-f22b706aeac8?ixid=M3w4MjcwNjd8MHwxfHNlYXJjaHw5fHxqZXdlbGxlcnl8ZW58MHx8fHwxNzY0NDM0NTUwfDA&ixlib=rb-4.1.0&w=1500&h=600&fit=max&q=80
+            "
+          />
+          <img
+            src="https://images.unsplash.com/photo-1518370265276-f22b706aeac8?ixid=M3w4MjcwNjd8MHwxfHNlYXJjaHw5fHxqZXdlbGxlcnl8ZW58MHx8fHwxNzY0NDM0NTUwfDA&ixlib=rb-4.1.0&w=1500&h=600&fit=max&q=80"
+            alt="نمای اصلی جواهرات لوکس"
+          />
+        </picture>
+        <div class="hero-gradient"></div>
+      </div>
+      <div class="container hero-content">
+        <h1>ظرافت ماندگار</h1>
+        <p>زیورآلات نفیس و گزینش شده که با دقت کامل ساخته شده اند.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#collections">مشاهده کالکشن</a>
+          <a class="btn btn-outline" href="#new">همین حالا خرید کنید</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured-categories section" id="categories">
+      <div class="container section-header">
+        <h2>دسته بندی های ویژه</h2>
+        <p>انتخاب های امضادار ما را کشف کنید</p>
+      </div>
+      <div class="container categories-grid">
+        <a class="category-card" href="category.html">
+          <div class="category-media">
+            <img
+              src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixid=M3w4MjcwNjd8MHwxfHNlYXJjaHw0fHxqZXdlbGxlcnl8ZW58MHx8fHwxNzY0NDM0NTUwfDA&ixlib=rb-4.1.0&w=1500&h=600&fit=max&q=80"
+              alt="انگشتر"
+            />
+          </div>
+          <div class="category-title">انگشتر</div>
+        </a>
+        <a class="category-card" href="category.html">
+          <div class="category-media">
+            <img
+              src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixid=M3w4MjcwNjd8MHwxfHNlYXJjaHw0fHxqZXdlbGxlcnl8ZW58MHx8fHwxNzY0NDM0NTUwfDA&ixlib=rb-4.1.0&w=1500&h=600&fit=max&q=80"
+              alt="گردنبند"
+            />
+          </div>
+          <div class="category-title">گردنبند</div>
+        </a>
+        <a class="category-card" href="category.html">
+          <div class="category-media">
+            <img
+              src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixid=M3w4MjcwNjd8MHwxfHNlYXJjaHw0fHxqZXdlbGxlcnl8ZW58MHx8fHwxNzY0NDM0NTUwfDA&ixlib=rb-4.1.0&w=1500&h=600&fit=max&q=80"
+              alt="دستبند"
+            />
+          </div>
+          <div class="category-title">دستبند</div>
+        </a>
+        <a class="category-card" href="category.html">
+          <div class="category-media">
+            <img
+              src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixid=M3w4MjcwNjd8MHwxfHNlYXJjaHw0fHxqZXdlbGxlcnl8ZW58MHx8fHwxNzY0NDM0NTUwfDA&ixlib=rb-4.1.0&w=1500&h=600&fit=max&q=80"
+              alt="گوشواره"
+            />
+          </div>
+          <div class="category-title">گوشواره</div>
+        </a>
+        <a class="category-card" href="category.html">
+          <div class="category-media">
+            <img
+              src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixid=M3w4MjcwNjd8MHwxfHNlYXJjaHw0fHxqZXdlbGxlcnl8ZW58MHx8fHwxNzY0NDM0NTUwfDA&ixlib=rb-4.1.0&w=1500&h=600&fit=max&q=80"
+              alt="زیورآلات عروسی"
+            />
+          </div>
+          <div class="category-title">زیورآلات عروسی</div>
+        </a>
+        <a class="category-card" href="category.html">
+          <div class="category-media">
+            <img
+              src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixid=M3w4MjcwNjd8MHwxfHNlYXJjaHw0fHxqZXdlbGxlcnl8ZW58MHx8fHwxNzY0NDM0NTUwfDA&ixlib=rb-4.1.0&w=1500&h=600&fit=max&q=80"
+              alt="هدایای لوکس"
+            />
+          </div>
+          <div class="category-title">هدایای لوکس</div>
+        </a>
+      </div>
+    </section>
+
+    <section class="new-arrivals section" id="new">
+      <div class="container section-header">
+        <h2>تازه ها</h2>
+        <p>جدیدترین افزوده ها به انتخاب ویژه ما</p>
+      </div>
+      <div class="container product-grid">
+        <div class="product-card">
+          <a href="product.html" class="product-media shine"
+            ><img
+              src="https://images.unsplash.com/photo-1713950920412-97799efdf870?ixid=M3w4MjcwNjd8MHwxfHNlYXJjaHw2fHxnb2xkJTIwcmluZ3xlbnwwfHx8fDE3NjQ1NzUzODJ8MA&ixlib=rb-4.1.0&fit=max&q=80"
+              alt="انگشتر طلای ۱۸ عیار"
+            /><button
+              class="media-overlay quick-view"
+              data-product="انگشتر طلای ۱۸ عیار"
+            >
+              نمایش سریع
+            </button></a
+          >
+          <div class="product-info">
+            <h3>انگشتر طلای ۱۸ عیار</h3>
+            <div class="price">$1,250</div>
+            <div class="rating">★★★★★</div>
+            <div class="btn-row">
+              <button
+                class="btn btn-primary"
+                data-add-product="انگشتر طلای ۱۸ عیار"
+              >
+                افزودن به سبد
+              </button>
+              <button
+                class="btn btn-buy"
+                data-buy-product="انگشتر طلای ۱۸ عیار"
+              >
+                خرید فوری
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <a href="product.html" class="product-media shine"
+            ><img
+              src="https://images.unsplash.com/photo-1713950920412-97799efdf870?ixid=M3w4MjcwNjd8MHwxfHNlYXJjaHw2fHxnb2xkJTIwcmluZ3xlbnwwfHx8fDE3NjQ1NzUzODJ8MA&ixlib=rb-4.1.0&fit=max&q=80"
+              alt="گردنبند الماس"
+            /><button
+              class="media-overlay quick-view"
+              data-product="گردنبند الماس"
+            >
+              نمایش سریع
+            </button></a
+          >
+          <div class="product-info">
+            <h3>گردنبند الماس</h3>
+            <div class="price">$3,800</div>
+            <div class="rating">★★★★☆</div>
+            <div class="btn-row">
+              <button class="btn btn-primary" data-add-product="گردنبند الماس">
+                افزودن به سبد
+              </button>
+              <button class="btn btn-buy" data-buy-product="گردنبند الماس">
+                خرید فوری
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <a href="product.html" class="product-media shine"
+            ><img
+              src="https://images.unsplash.com/photo-1713950920412-97799efdf870?ixid=M3w4MjcwNjd8MHwxfHNlYXJjaHw2fHxnb2xkJTIwcmluZ3xlbnwwfHx8fDE3NjQ1NzUzODJ8MA&ixlib=rb-4.1.0&fit=max&q=80"
+              alt="دستبند رزگلد"
+            /><button
+              class="media-overlay quick-view"
+              data-product="دستبند رزگلد"
+            >
+              نمایش سریع
+            </button></a
+          >
+          <div class="product-info">
+            <h3>دستبند رزگلد</h3>
+            <div class="price">$980</div>
+            <div class="rating">★★★★★</div>
+            <div class="btn-row">
+              <button class="btn btn-primary" data-add-product="دستبند رزگلد">
+                افزودن به سبد
+              </button>
+              <button class="btn btn-buy" data-buy-product="دستبند رزگلد">
+                خرید فوری
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <a href="product.html" class="product-media shine"
+            ><img
+              src="https://images.unsplash.com/photo-1713950920412-97799efdf870?ixid=M3w4MjcwNjd8MHwxfHNlYXJjaHw2fHxnb2xkJTIwcmluZ3xlbnwwfHx8fDE3NjQ1NzUzODJ8MA&ixlib=rb-4.1.0&fit=max&q=80"
+              alt="گوشواره زمرد"
+            /><button
+              class="media-overlay quick-view"
+              data-product="گوشواره زمرد"
+            >
+              نمایش سریع
+            </button></a
+          >
+          <div class="product-info">
+            <h3>گوشواره زمرد</h3>
+            <div class="price">$1,640</div>
+            <div class="rating">★★★★☆</div>
+            <div class="btn-row">
+              <button class="btn btn-primary" data-add-product="گوشواره زمرد">
+                افزودن به سبد
+              </button>
+              <button class="btn btn-buy" data-buy-product="گوشواره زمرد">
+                خرید فوری
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bestsellers section" id="bestsellers">
+      <div class="container section-header">
+        <h2>زیورآلات ترند</h2>
+        <p>محبوب ترین قطعات نزد مشتریان ما</p>
+      </div>
+      <div class="container product-grid">
+        <div class="product-card">
+          <a href="product.html" class="product-media shine"
+            ><img
+              src="https://images.unsplash.com/photo-1628926379972-9843ad139a8c?ixid=M3w4MjcwNjd8MHwxfHNlYXJjaHw3fHxnb2xkJTIwcmluZ3xlbnwwfHx8fDE3NjQ1NzUzODJ8MA&ixlib=rb-4.1.0&fit=max&q=80"
+              alt="ست عروس الماس"
+            /><button
+              class="media-overlay quick-view"
+              data-product="ست عروس الماس"
+            >
+              نمایش سریع
+            </button></a
+          >
+          <div class="product-info">
+            <h3>ست عروس الماس</h3>
+            <div class="price">$8,900</div>
+            <div class="rating">★★★★★</div>
+          </div>
+        </div>
+        <div class="product-card">
+          <a href="product.html" class="product-media shine"
+            ><img
+              src="https://images.unsplash.com/photo-1628926379972-9843ad139a8c?ixid=M3w4MjcwNjd8MHwxfHNlYXJjaHw3fHxnb2xkJTIwcmluZ3xlbnwwfHx8fDE3NjQ1NzUzODJ8MA&ixlib=rb-4.1.0&fit=max&q=80"
+              alt="نسخه محدود طراح"
+            /><button
+              class="media-overlay quick-view"
+              data-product="نسخه محدود طراح"
+            >
+              نمایش سریع
+            </button></a
+          >
+          <div class="product-info">
+            <h3>نسخه محدود طراح</h3>
+            <div class="price">$5,450</div>
+            <div class="rating">★★★★★</div>
+          </div>
+        </div>
+        <div class="product-card">
+          <a href="product.html" class="product-media shine"
+            ><img
+              src="https://images.unsplash.com/photo-1628926379972-9843ad139a8c?ixid=M3w4MjcwNjd8MHwxfHNlYXJjaHw3fHxnb2xkJTIwcmluZ3xlbnwwfHx8fDE3NjQ1NzUzODJ8MA&ixlib=rb-4.1.0&fit=max&q=80"
+              alt="چوکر طلای ۱۸ عیار"
+            /><button
+              class="media-overlay quick-view"
+              data-product="چوکر طلای ۱۸ عیار"
+            >
+              نمایش سریع
+            </button></a
+          >
+          <div class="product-info">
+            <h3>چوکر طلای ۱۸ عیار</h3>
+            <div class="price">$2,320</div>
+            <div class="rating">★★★★☆</div>
+          </div>
+        </div>
+        <div class="product-card">
+          <a href="product.html" class="product-media shine"
+            ><img
+              src="https://images.unsplash.com/photo-1628926379972-9843ad139a8c?ixid=M3w4MjcwNjd8MHwxfHNlYXJjaHw3fHxnb2xkJTIwcmluZ3xlbnwwfHx8fDE3NjQ1NzUzODJ8MA&ixlib=rb-4.1.0&fit=max&q=80"
+              alt="گوشواره حلقه ای طلای ۱۸ عیار"
+            /><button
+              class="media-overlay quick-view"
+              data-product="گوشواره حلقه ای طلای ۱۸ عیار"
+            >
+              نمایش سریع
+            </button></a
+          >
+          <div class="product-info">
+            <h3>گوشواره حلقه ای طلای ۱۸ عیار</h3>
+            <div class="price">$760</div>
+            <div class="rating">★★★★☆</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="luxury-banner" id="collections">
+      <div class="container luxury-inner">
+        <div class="luxury-copy">
+          <h2>کالکشن های لوکس</h2>
+          <ul class="luxury-list">
+            <li>عروس</li>
+            <li>الماس</li>
+            <li>طلای ۱۸ عیار</li>
+            <li>نسخه محدود طراح</li>
+          </ul>
+          <a class="btn btn-primary" href="#new">مشاهده کالکشن ها</a>
+        </div>
+        <div class="luxury-media">
+          <img
+            src="https://images.unsplash.com/photo-1614606140245-2c33ece9e2cf?ixid=M3w4MjcwNjd8MHwxfHNlYXJjaHw4fHxnb2xkJTIwcmluZ3xlbnwwfHx8fDE3NjQ1NzUzODJ8MA&ixlib=rb-4.1.0&fit=max&q=80"
+            alt="نمایش کالکشن لوکس"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="why-us section" id="about">
+      <div class="container section-header">
+        <h2>چرا ما را انتخاب کنید</h2>
+        <p>تعهد به برتری</p>
+      </div>
+      <div class="container why-grid">
+        <div class="why-card">
+          <div class="why-title">هنرمندی ساخت</div>
+          <p>ساخته شده با دست توسط استادکاران</p>
+        </div>
+        <div class="why-card">
+          <div class="why-title">الماس های تایید شده</div>
+          <p>تامین شده به صورت اخلاقی و تایید شده</p>
+        </div>
+        <div class="why-card">
+          <div class="why-title">پولیش مادام العمر</div>
+          <p>مراقبت رایگان برای درخشندگی ماندگار</p>
+        </div>
+        <div class="why-card">
+          <div class="why-title">بسته بندی امن</div>
+          <p>ارائه محافظتی و مطمئن</p>
+        </div>
+        <div class="why-card">
+          <div class="why-title">ضمانت اصالت</div>
+          <p>تضمین مواد اولیه اصل</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials section">
+      <div class="container section-header">
+        <h2>دیدگاه مشتریان</h2>
+        <p>مورد اعتماد مشتریان خوش سلیقه</p>
+      </div>
+      <div class="container testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>قطعات چشمگیر و خدمات بی نقص.</p>
+          <div class="client">Sophia L.</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>طرح های ماندگار که هر مناسبت را خاص می کند.</p>
+          <div class="client">Daniel R.</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★☆</div>
+          <p>ساخت زیبا و بسته بندی شیک.</p>
+          <div class="client">Amira K.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="social section">
+      <div class="container section-header">
+        <h2>در شبکه های اجتماعی</h2>
+        <p>برگزیده های سبک زندگی لوکس</p>
+      </div>
+      <div class="container social-grid">
+        <img
+          src="https://images.unsplash.com/photo-1588444757697-5c26c2576d56?ixid=M3w4MjcwNjd8MHwxfHNlYXJjaHwxMHx8Z29sZCUyMHJpbmd8ZW58MHx8fHwxNzY0NTc1MzgyfDA&ixlib=rb-4.1.0&fit=max&q=80"
+          alt="سبک زندگی ۱"
+        />
+        <img
+          src="https://images.unsplash.com/photo-1588444757697-5c26c2576d56?ixid=M3w4MjcwNjd8MHwxfHNlYXJjaHwxMHx8Z29sZCUyMHJpbmd8ZW58MHx8fHwxNzY0NTc1MzgyfDA&ixlib=rb-4.1.0&fit=max&q=80"
+          alt="سبک زندگی ۲"
+        />
+        <img
+          src="https://images.unsplash.com/photo-1588444757697-5c26c2576d56?ixid=M3w4MjcwNjd8MHwxfHNlYXJjaHwxMHx8Z29sZCUyMHJpbmd8ZW58MHx8fHwxNzY0NTc1MzgyfDA&ixlib=rb-4.1.0&fit=max&q=80"
+          alt="سبک زندگی ۳"
+        />
+        <img
+          src="https://images.unsplash.com/photo-1588444757697-5c26c2576d56?ixid=M3w4MjcwNjd8MHwxfHNlYXJjaHwxMHx8Z29sZCUyMHJpbmd8ZW58MHx8fHwxNzY0NTc1MzgyfDA&ixlib=rb-4.1.0&fit=max&q=80"
+          alt="سبک زندگی ۴"
+        />
+        <img
+          src="https://images.unsplash.com/photo-1588444757697-5c26c2576d56?ixid=M3w4MjcwNjd8MHwxfHNlYXJjaHwxMHx8Z29sZCUyMHJpbmd8ZW58MHx8fHwxNzY0NTc1MzgyfDA&ixlib=rb-4.1.0&fit=max&q=80"
+          alt="سبک زندگی ۵"
+        />
+        <img
+          src="https://images.unsplash.com/photo-1588444757697-5c26c2576d56?ixid=M3w4MjcwNjd8MHwxfHNlYXJjaHwxMHx8Z29sZCUyMHJpbmd8ZW58MHx8fHwxNzY0NTc1MzgyfDA&ixlib=rb-4.1.0&fit=max&q=80"
+          alt="سبک زندگی ۶"
+        />
+      </div>
+    </section>
+
+    <section class="newsletter section" id="contact">
+      <div class="container newsletter-inner">
+        <div class="newsletter-copy">
+          <h2>به باشگاه لوکس ما بپیوندید</h2>
+          <p>پیش نمایش های ویژه و پیشنهادهای اختصاصی</p>
+        </div>
+        <form class="newsletter-form" id="newsletterForm">
+          <input
+            type="email"
+            name="email"
+            placeholder="ایمیل خود را وارد کنید"
+            required
+          />
+          <button class="btn btn-primary" type="submit">اشتراک</button>
+        </form>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <div class="brand">Aurelia</div>
+          <p>زیورآلات نفیس برای ظرافت مدرن.</p>
+        </div>
+        <div>
+          <div class="footer-title">فروشگاه</div>
+          <a href="index.html#collections">کالکشن ها</a>
+          <a href="category.html">دسته بندی ها</a>
+          <a href="#">لوک بوک</a>
+        </div>
+        <div>
+          <div class="footer-title">پشتیبانی</div>
+          <a href="#">ارسال</a>
+          <a href="#">مرجوعی</a>
+          <a href="contact.html">تماس</a>
+        </div>
+        <div>
+          <div class="footer-title">قوانین</div>
+          <a href="#">حریم خصوصی</a>
+          <a href="#">شرایط</a>
+          <a href="#">کوکی ها</a>
+        </div>
+        <div>
+          <div class="footer-title">دنبال کنید</div>
+          <a href="#">Instagram</a>
+          <a href="#">Pinterest</a>
+          <a href="#">Facebook</a>
+        </div>
+      </div>
+      <div class="container payments">
+        <span>Visa</span>
+        <span>Mastercard</span>
+        <span>Amex</span>
+        <span>PayPal</span>
+      </div>
+    </footer>
+
+    <div class="modal" id="quickViewModal" aria-hidden="true">
+      <div class="modal-backdrop" data-close></div>
+      <div class="modal-dialog">
+        <button class="modal-close" aria-label="بستن" data-close>×</button>
+        <div class="modal-media"><img id="modalImage" alt="" /></div>
+        <div class="modal-content">
+          <h3 id="modalTitle"></h3>
+          <div class="modal-meta">
+            <div class="price" id="modalPrice"></div>
+            <div class="rating" id="modalRating"></div>
+          </div>
+          <p id="modalDesc">مواد اولیه ممتاز. خطوط ظریف. مراقبت مادام العمر.</p>
+          <div class="modal-actions">
+            <button class="btn btn-primary btn-add-cart">افزودن به سبد</button>
+            <button class="btn btn-wishlist btn-add-wishlist">
+              افزودن به علاقه مندی ها
+            </button>
+            <button class="btn btn-outline" data-close>بستن</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <aside class="drawer" id="menuDrawer" aria-hidden="true">
+      <div class="drawer-backdrop" data-close></div>
+      <div class="drawer-panel">
+        <div class="drawer-header">
+          <div class="drawer-title">منو</div>
+          <button class="icon-btn" data-close>×</button>
+        </div>
+        <div class="drawer-body">
+          <a
+            href="index.html#collections"
+            class="btn btn-ghost"
+            style="width: 100%"
+            >کالکشن ها</a
+          >
+          <a href="index.html#new" class="btn btn-ghost" style="width: 100%"
+            >تازه ها</a
+          >
+          <a
+            href="index.html#bestsellers"
+            class="btn btn-ghost"
+            style="width: 100%"
+            >پرفروش ها</a
+          >
+          <a href="category.html" class="btn btn-ghost" style="width: 100%"
+            >دسته بندی ها</a
+          >
+          <a href="about.html" class="btn btn-ghost" style="width: 100%"
+            >درباره ما</a
+          >
+          <a href="contact.html" class="btn btn-ghost" style="width: 100%"
+            >تماس</a
+          >
+        </div>
+      </div>
+    </aside>
+
+    <aside class="drawer" id="cartDrawer" aria-hidden="true">
+      <div class="drawer-backdrop" data-close></div>
+      <div class="drawer-panel">
+        <div class="drawer-header">
+          <div class="drawer-title">سبد خرید شما</div>
+          <button class="icon-btn" data-close>×</button>
+        </div>
+        <div class="drawer-body" id="cartItems"></div>
+        <div class="drawer-footer">
+          <div class="subtotal">جمع جزء: <span id="cartSubtotal">$0</span></div>
+          <button class="btn btn-primary" style="width: 100%">
+            تسویه حساب
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <aside class="drawer" id="wishlistDrawer" aria-hidden="true">
+      <div class="drawer-backdrop" data-close></div>
+      <div class="drawer-panel">
+        <div class="drawer-header">
+          <div class="drawer-title">علاقه مندی ها</div>
+          <button class="icon-btn" data-close>×</button>
+        </div>
+        <div class="drawer-body" id="wishlistItems"></div>
+      </div>
+    </aside>
+
+    <div class="modal" id="accountModal" aria-hidden="true">
+      <div class="modal-backdrop" data-close></div>
+      <div class="modal-dialog">
+        <button class="modal-close" aria-label="بستن" data-close>×</button>
+        <div class="modal-content">
+          <h3>خوش آمدید</h3>
+          <form class="account-form" id="accountForm">
+            <input type="email" placeholder="ایمیل" required />
+            <input type="password" placeholder="رمز عبور" required />
+            <button class="btn btn-primary" type="submit">ورود</button>
+            <div class="account-links">
+              <a href="#">ایجاد حساب</a>
+              <a href="#">فراموشی رمز عبور</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
